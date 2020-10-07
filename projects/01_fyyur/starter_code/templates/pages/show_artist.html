@@ -6,6 +6,10 @@
 		<h1 class="monospace">
 			{{ artist.name }}
 		</h1>
+
+		<form method="GET" action="/artists/{{artist.id}}/edit">
+			<button type="submit" class="btn btn-primary btn-sm m1"> Edit Artist</button>
+		</form>
 		<p class="subtitle">
 			ID: {{ artist.id }}
 		</p>

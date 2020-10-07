@@ -3,9 +3,20 @@
 {% block content %}
 <div class="row">
 	<div class="col-sm-6">
-		<h1 class="monospace">
-			{{ venue.name }}
-		</h1>
+		<div style="display: inline;">
+			<h1 class="monospace">
+				{{ venue.name }}
+			</h1>
+			
+				<form method="POST" action="{{ url_for('delete_venue',venue_id = venue.id) }}" style="display:inline-block">
+					<button type="submit" class="btn btn-danger btn-sm m1" style="display:inline-block"> Delete venue</button>
+				</form>
+				<form method="GET" action="/venues/{{ venue.id }}/edit" style="display:inline-block" >
+					<button type="submit" class="btn btn-primary btn-sm m1" style="display:inline-block"> Edit venue  </button>
+				</form>
+			
+
+		</div>
 		<p class="subtitle">
 			ID: {{ venue.id }}
 		</p>
